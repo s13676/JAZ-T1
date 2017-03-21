@@ -1,7 +1,6 @@
 package servlets;
 
 import java.io.IOException;
-import java.math.BigDecimal;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
