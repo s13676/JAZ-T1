@@ -46,11 +46,11 @@ public class Servlet extends HttpServlet {
 			}
 		} else {
 			Float q = 1 + (oprocentowanieKredytu / ratyKredytu);
-			Double rata = kwotaKredytu * Math.pow(q, ratyKredytu) * (q - 1)/Math.pow(q, ratyKredytu-1);
+			Double rata = kwotaKredytu * Math.pow(q, ratyKredytu) * (q - 1)/(Math.pow(q, ratyKredytu)-1);
 			rata += oplataStala;
 			for (Integer lp=1;lp<=ratyKredytu;lp++) {
 				Float czescKapitalowa = kwotaKredytu / ratyKredytu;
-				Float czescOdsetkowa = (float) (czescKapitalowa - rata);
+				Float czescOdsetkowa = (float) (rata - czescKapitalowa);
 				
 				response.getWriter().println("<tr>");
 				response.getWriter().println("<td>"+lp+"</td>"+"<td>"+czescKapitalowa+"</td>"+
